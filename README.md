@@ -15,8 +15,6 @@ A comprehensive interview template for testing candidates' ability to understand
 ```bash
 
 # Install main dependencies
-npm install
-
 # Setup React application (AngularJS has no dependencies)
 # Build both applications
 # Start the server in Dev mode
