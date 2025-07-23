@@ -33,8 +33,7 @@ The server will be available at `http://localhost:3000` with:
 angular-app/src/
 ├── index.html                     # Main HTML with ng-app
 ├── app.js                         # Module definition & controller
-├── app.css                        # Clean styling
-├── favicon.ico                    # App favicon
+├── app.css                        # Styling for the entire app
 ├── directives/
 │   ├── notes-container.directive.js   # Main container directive
 │   └── note-item.directive.js         # Nested item directive
