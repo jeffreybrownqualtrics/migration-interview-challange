@@ -1,0 +1,28 @@
+{
+  "name": "angular-to-react-interview",
+  "version": "1.0.0",
+  "description": "Interview template for migrating Angular to React",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:angular\" \"npm run dev:react\" \"npm run dev:server\"",
+    "dev:server": "nodemon server.js",
+    "dev:angular": "echo 'AngularJS app - run npm run build && npm start' && npm run build:angular",
+    "dev:react": "cd react-app && npm start",
+    "build": "npm run build:angular && npm run build:react",
+    "build:angular": "mkdir -p public/angular/browser && rm -rf public/angular/browser/* && cp -r angular-app/src/* public/angular/browser/",
+    "build:react": "cd react-app && npm run build && mkdir -p ../public/react && cp -r build/* ../public/react/",
+    "start": "node server.js",
+    "setup": "npm install &&npm run setup:angular && npm run setup:react && npm run build && npm run dev",
+    "setup:angular": "echo 'AngularJS setup complete - no dependencies needed'",
+    "setup:react": "cd react-app && npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "author": ""
+} 

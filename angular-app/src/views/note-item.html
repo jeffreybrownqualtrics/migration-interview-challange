@@ -1,0 +1,25 @@
+<div class="note-item">
+  <!-- Note content section -->
+  <div class="note-content">
+    <div class="note-text">{{vm.noteData.text}}</div>
+    <!-- Show created date if available -->
+    <div class="note-metadata" ng-if="vm.noteData.createdAt">
+      <small class="created-date">Created: {{vm.formatDate(vm.noteData.createdAt)}}</small>
+    </div>
+  </div>
+  <!-- Note actions section -->
+  <div class="note-actions">
+    <!-- Delete button with confirmation -->
+    <button class="delete-btn" ng-click="vm.showConfirm = !vm.showConfirm" ng-if="!vm.showConfirm" title="Delete note">🗑️ Delete</button>
+    <!-- Confirmation buttons (conditional rendering) -->
+    <div class="confirm-actions" ng-if="vm.showConfirm">
+      <span class="confirm-text">Delete this note?</span>
+      <button class="confirm-btn" ng-click="vm.confirmDelete()" title="Confirm delete">✓ Yes</button>
+      <button class="cancel-btn" ng-click="vm.cancelDelete()" title="Cancel delete">✗ No</button>
+    </div>
+  </div>
+  <!-- Debug info for this note (only visible in development) -->
+  <div class="note-debug" ng-if="false">
+    <small>ID: {{vm.noteData.id}} | Show Confirm: {{vm.showConfirm}}</small>
+  </div>
+</div> 

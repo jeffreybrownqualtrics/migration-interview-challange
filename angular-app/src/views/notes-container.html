@@ -1,0 +1,35 @@
+<div class="notes-container">
+  <!-- Add Note Form Section -->
+  <div class="add-note-section" ng-if="vm.showForm">
+    <h3>Add a New Note</h3>
+    <form ng-submit="vm.addNote()" class="add-note-form">
+      <div class="input-group">
+        <input type="text" ng-model="vm.newNoteText" placeholder="What needs to be remembered?" class="note-input" required autocomplete="off">
+        <button type="submit" class="add-btn" ng-disabled="!vm.newNoteText || !vm.newNoteText.trim()">Add Note</button>
+        <button type="button" class="clear-btn" ng-click="vm.clearInput()" ng-if="vm.newNoteText">Clear</button>
+      </div>
+    </form>
+  </div>
+  <!-- Notes List Section -->
+  <div class="notes-list-section">
+    <!-- Show message when no notes -->
+    <div class="empty-state" ng-if="!vm.hasNotes()">
+      <div class="empty-icon">📝</div>
+      <h3>No notes yet</h3>
+      <p ng-if="vm.showForm">Add your first note above to get started!</p>
+      <p ng-if="!vm.showForm">No notes to display.</p>
+    </div>
+    <!-- Show notes list when notes exist -->
+    <div class="notes-list" ng-if="vm.hasNotes()">
+      <h3>Your Notes ({{vm.notes.length}})</h3>
+      <note-item ng-repeat="note in vm.notes track by note.id" note-data="note" on-delete="vm.deleteNote(noteId)"></note-item>
+    </div>
+  </div>
+  <!-- Debug section (only show in development) -->
+  <div class="debug-section" ng-if="false">
+    <p><strong>Debug Info:</strong></p>
+    <p>Notes count: {{vm.notes.length}}</p>
+    <p>Has notes: {{vm.hasNotes()}}</p>
+    <p>Show form: {{vm.showForm}}</p>
+  </div>
+</div> 

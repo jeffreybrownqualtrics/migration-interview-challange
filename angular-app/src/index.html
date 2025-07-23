@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="notesApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Notes App</title>
+  <base href="/angular/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="NotesController as vm">
+  <!-- Shared service for cross-framework data sharing -->
+  <script src="/shared-service.js"></script>
+  
+  <div class="notes-app">
+    <header class="app-header">
+      <h1>📝 Notes App</h1>
+      <p class="subtitle">AngularJS Implementation - Simplified for Learning</p>
+    </header>
+
+    <!-- Main notes container directive -->
+    <notes-container></notes-container>
+
+    <footer class="app-footer">
+      <p>
+        🎯 <strong>Interview Challenge:</strong> 
+        Build this functionality in React at <a href="/react" target="_blank">/react</a>
+      </p>
+      <p class="tech-info">
+        Built with AngularJS 1.x • Features: Directives, Controllers, Basic CRUD
+      </p>
+    </footer>
+  </div>
+
+  <!-- AngularJS 1.x -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  
+  <!-- App files -->
+  <script src="app.js"></script>
+  <script src="directives/notes-container.directive.js"></script>
+  <script src="directives/note-item.directive.js"></script>
+</body>
+</html>
