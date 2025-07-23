@@ -47,10 +47,9 @@ angular-app/src/
 react-app/src/
 ├── App.tsx                        # Main app component with instructions
 ├── App.css                        # Styling for the entire app
-├── types/
-│   └── notes.ts                   # TypeScript interfaces & types
 └── components/
     ├── index.ts                   # Component exports
     └── NotesApp.tsx               # Notes functionality component
-│   └── Note.tsx                   # Individual note display component
+    └── NoteItem.tsx               # Individual note display component
+    └── SharedServiceTypes.ts      # TypeScript interfaces & types
 ```
