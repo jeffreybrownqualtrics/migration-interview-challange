@@ -10,14 +10,17 @@
     "dev:react": "cd react-app && npm start",
     "build": "npm run build:angular && npm run build:react",
     "build:angular": "mkdir -p public/angular/browser && rm -rf public/angular/browser/* && cp -r angular-app/src/* public/angular/browser/",
-    "build:angular:win": "if not exist public\\angular\\browser mkdir public\\angular\\browser && rmdir /s /q public\\angular\\browser 2>nul & xcopy angular-app\\src\\* public\\angular\\browser\\ /e /i /y",
+    "build:angular:win": "if not exist public\\angular\\browser mkdir public\\angular\\browser && rmdir /s /q public\\angular\\browser 2>nul && xcopy angular-app\\src\\* public\\angular\\browser\\ /e /i /y",
     "build:react": "cd react-app && npm run build && mkdir -p ../public/react && cp -r build/* ../public/react/",
-    "build:react:win": "cd react-app && npm run build && if not exist ..\\public\\react mkdir ..\\public\\react && xcopy build\\* ..\\public\\react\\ /e /i /y",
+    "build:react:win": "cd react-app && npm run build && if not exist ..\\public\\react mkdir ..\\public\\react && if exist build xcopy build\\* ..\\public\\react\\ /e /i /y",
     "build:win": "npm run build:angular:win && npm run build:react:win",
     "start": "node server.js",
     "setup": "npm install &&npm run setup:angular && npm run setup:react && npm run build && npm run dev",
+    "setup:win": "npm install && npm run setup:angular:win && npm run setup:react:win && npm run build:win && npm run dev",
     "setup:angular": "echo 'AngularJS setup complete - no dependencies needed'",
-    "setup:react": "cd react-app && npm install"
+    "setup:angular:win": "echo 'AngularJS setup complete - no dependencies needed'",
+    "setup:react": "cd react-app && npm install",
+    "setup:react:win": "cd react-app && npm install"
   },
   "dependencies": {
     "express": "^4.18.2",
