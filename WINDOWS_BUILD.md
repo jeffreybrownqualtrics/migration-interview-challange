@@ -86,6 +86,20 @@ This will:
 npm run build:win
 ```
 
+### Option 5: Test Development Setup
+
+To verify that the Windows development setup is working correctly:
+
+```cmd
+test-dev.bat
+```
+
+This will test:
+- Angular build process
+- React build process
+- React start script
+- Development command
+
 ## Live Updating Features
 
 The development scripts provide live updating for:
@@ -121,6 +135,10 @@ When running in development mode:
   - Want the fastest way to get started
   - Need live updating without extra setup
 
+- **Use `test-dev.bat`** when:
+  - Want to verify the development setup is working
+  - Troubleshooting development issues
+
 ## Troubleshooting
 
 If you encounter issues, run the troubleshooting script first:
@@ -134,6 +152,20 @@ This will check:
 - Project structure
 - React dependencies
 - Existing build artifacts
+
+### Common Development Issues
+
+#### "npm run dev:angular" fails
+- This is expected - the Unix version uses Unix commands
+- Use `npm run dev:win` instead, which uses Windows-compatible commands
+
+#### "PORT=3001" not recognized
+- This is a Unix syntax that doesn't work on Windows
+- The Windows scripts now use `set PORT=3001` syntax
+
+#### "concurrently" errors
+- Make sure you're using the Windows-compatible dev command: `npm run dev:win`
+- The regular `npm run dev` uses Unix commands that fail on Windows
 
 ## What the Windows build does
 
@@ -156,7 +188,7 @@ This usually happens when:
 
 ### Live updating not working
 
-- Make sure you're using `dev.bat`, `quickstart.bat`, or `npm run dev`
+- Make sure you're using `dev.bat`, `quickstart.bat`, or `npm run dev:win`
 - Check that both servers are running (Express on 3000, React on 3001)
 - Verify you're editing files in the correct directories (`react-app/src` for React)
 
@@ -201,7 +233,7 @@ If the automated setup fails, you can run these steps manually:
 
 4. **Start development servers**:
    ```cmd
-   npm run dev
+   npm run dev:win
    ```
 
 ## Manual Build Steps
@@ -248,7 +280,7 @@ The application will be available at `http://localhost:3000`
 For development, you can use:
 
 ```cmd
-npm run dev
+npm run dev:win
 ```
 
 This will start both the Angular and React development servers along with the Express server.
@@ -260,10 +292,12 @@ This will start both the Angular and React development servers along with the Ex
 | `mkdir -p` | `if not exist dir mkdir dir` |
 | `rm -rf` | `rmdir /s /q` |
 | `cp -r` | `xcopy /e /i /y` |
+| `PORT=3001` | `set PORT=3001` |
 
 ## Getting Help
 
 1. Run `troubleshoot.bat` to diagnose issues
-2. Check the console output for specific error messages
-3. Ensure you're running commands from the project root directory
-4. Verify Node.js and npm are properly installed 
+2. Run `test-dev.bat` to verify development setup
+3. Check the console output for specific error messages
+4. Ensure you're running commands from the project root directory
+5. Verify Node.js and npm are properly installed 

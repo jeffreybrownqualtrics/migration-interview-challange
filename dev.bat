@@ -47,4 +47,4 @@ echo Press Ctrl+C to stop all servers
 echo.
 
 echo Starting development servers with live updating...
-call npm run dev 
+call npm run dev:win 

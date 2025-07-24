@@ -48,4 +48,4 @@ Write-Host "Press Ctrl+C to stop all servers" -ForegroundColor Yellow
 Write-Host ""
 
 Write-Host "Starting development servers with live updating..." -ForegroundColor Yellow
-npm run dev 
+npm run dev:win 

@@ -116,4 +116,4 @@ echo.
 echo Press Ctrl+C to stop the development servers
 echo.
 
-call npm run dev 
+call npm run dev:win 

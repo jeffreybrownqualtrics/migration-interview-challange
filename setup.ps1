@@ -117,4 +117,4 @@ Write-Host ""
 Write-Host "Press Ctrl+C to stop the development servers" -ForegroundColor Yellow
 Write-Host ""
 
-npm run dev 
+npm run dev:win 
