@@ -16,7 +16,7 @@ function App() {
       <div className="challenge-section">
         <h3>🎯 Your Mission</h3>
         <div className="challenge-content">
-          <p>Study the AngularJS implementation at <a href="http://localhost:3000/angular" target="_blank">/angular</a> and build equivalent functionality in React.</p>
+          <p>Study the AngularJS implementation at <a href="http://localhost:3000/angular" target="_blank" rel="noreferrer">/angular</a> and build equivalent functionality in React.</p>
           
           <h4>Features to Implement:</h4>
           <ul className="features-list">
@@ -32,7 +32,7 @@ function App() {
           <h4>Available Resources:</h4>
           <ul className="resources-list">
             <li>🔧 <code>window.sharedNotesService</code> - Shared service for data management</li>
-            <li>📖 <a href="http://localhost:3000/angular" target="_blank">AngularJS reference implementation</a></li>
+            <li>📖 <a href="http://localhost:3000/angular" target="_blank" rel="noreferrer">AngularJS reference implementation</a></li>
             <li>🎨 CSS classes already defined in App.css</li>
           </ul>
         </div>

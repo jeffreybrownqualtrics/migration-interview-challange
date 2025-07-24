@@ -6,7 +6,7 @@ export interface Note {
   createdAt: Date;
 }
 
-// ## Shared service located in public/shared-service.js ##
+// ## Shared service located in shared/shared-service.js ##
 
 export interface SharedNotesService {
   getNotes(): Note[];

@@ -74,12 +74,12 @@ if ($LASTEXITCODE -ne 0) {
 Set-Location ..
 
 Write-Host "Copying React build to public directory..." -ForegroundColor Yellow
-if (-not (Test-Path "public\react")) {
-    New-Item -ItemType Directory -Path "public\react" -Force | Out-Null
+if (-not (Test-Path "shared\react")) {
+    New-Item -ItemType Directory -Path "shared\react" -Force | Out-Null
 }
 
 if (Test-Path "react-app\build") {
-    Copy-Item -Path "react-app\build\*" -Destination "public\react\" -Recurse -Force
+    Copy-Item -Path "react-app\build\*" -Destination "shared\react\" -Recurse -Force
     if ($LASTEXITCODE -ne 0) {
         Write-Host "Error copying React build files" -ForegroundColor Red
         Read-Host "Press Enter to continue"
@@ -97,13 +97,13 @@ Write-Host "Setup completed successfully!" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Build artifacts created:" -ForegroundColor Cyan
-if (Test-Path "public\angular\browser") {
-    Write-Host "- Angular app: public\angular\browser\" -ForegroundColor Green
+if (Test-Path "shared\angular\browser") {
+    Write-Host "- Angular app: shared\angular\browser\" -ForegroundColor Green
 } else {
     Write-Host "- Angular app: NOT FOUND" -ForegroundColor Red
 }
-if (Test-Path "public\react") {
-    Write-Host "- React app: public\react\" -ForegroundColor Green
+if (Test-Path "shared\react") {
+    Write-Host "- React app: shared\react\" -ForegroundColor Green
 } else {
     Write-Host "- React app: NOT FOUND" -ForegroundColor Red
 }

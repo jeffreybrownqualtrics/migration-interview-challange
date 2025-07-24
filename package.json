@@ -12,10 +12,10 @@
     "dev:react": "cd react-app && npm start",
     "dev:react:win": "cd react-app && npm run start:win",
     "build": "npm run build:angular && npm run build:react",
-    "build:angular": "mkdir -p public/angular/browser && rm -rf public/angular/browser/* && cp -r angular-app/src/* public/angular/browser/",
-    "build:angular:win": "if not exist public\\angular\\browser mkdir public\\angular\\browser && rmdir /s /q public\\angular\\browser 2>nul && xcopy angular-app\\src\\* public\\angular\\browser\\ /e /i /y",
-    "build:react": "cd react-app && npm run build && mkdir -p ../public/react && cp -r build/* ../public/react/",
-    "build:react:win": "cd react-app && npm run build && if not exist ..\\public\\react mkdir ..\\public\\react && if exist build xcopy build\\* ..\\public\\react\\ /e /i /y",
+    "build:angular": "mkdir -p shared/angular/browser && rm -rf shared/angular/browser/* && cp -r angular-app/src/* shared/angular/browser/",
+    "build:angular:win": "if not exist shared\\angular\\browser mkdir shared\\angular\\browser && rmdir /s /q shared\\angular\\browser 2>nul && xcopy angular-app\\src\\* shared\\angular\\browser\\ /e /i /y",
+    "build:react": "cd react-app && npm run build && mkdir -p ../shared/react && cp -r build/* ../shared/react/",
+    "build:react:win": "cd react-app && npm run build && if not exist ..\\shared\\react mkdir ..\\shared\\react && if exist build xcopy build\\* ..\\shared\\react\\ /e /i /y",
     "build:win": "npm run build:angular:win && npm run build:react:win",
     "start": "node server.js",
     "setup": "npm install &&npm run setup:angular && npm run setup:react && npm run build && npm run dev",
@@ -23,7 +23,11 @@
     "setup:angular": "echo 'AngularJS setup complete - no dependencies needed'",
     "setup:angular:win": "echo 'AngularJS setup complete - no dependencies needed'",
     "setup:react": "cd react-app && npm install",
-    "setup:react:win": "cd react-app && npm install"
+    "setup:react:win": "cd react-app && npm install",
+    "clean": "rm -rf shared/react shared/angular/browser react-app/build",
+    "clean:win": "if exist shared\\react rmdir /s /q shared\\react && if exist shared\\angular\\browser rmdir /s /q shared\\angular\\browser && if exist react-app\\build rmdir /s /q react-app\\build",
+    "clean:all": "rm -rf shared/react shared/angular react-app/build node_modules react-app/node_modules",
+    "clean:all:win": "if exist shared\\react rmdir /s /q shared\\react && if exist shared\\angular\\browser rmdir /s /q shared\\angular\\browser && if exist react-app\\build rmdir /s /q react-app\\build && if exist node_modules rmdir /s /q node_modules && if exist react-app\\node_modules rmdir /s /q react-app\\node_modules"
   },
   "dependencies": {
     "express": "^4.18.2",

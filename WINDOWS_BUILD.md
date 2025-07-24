@@ -74,7 +74,7 @@ When running in development mode:
 
 #### Build artifacts not found
 - Run `npm run build` to rebuild the project
-- Check that the `public` directory contains both `angular/browser` and `react` folders
+- Check that the `shared` directory contains both `angular/browser` and `react` folders
 
 ## Manual Build Steps
 

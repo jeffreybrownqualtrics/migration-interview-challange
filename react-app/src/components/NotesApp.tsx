@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Note } from './SharedServiceTypes';
 
 interface NotesAppProps {}
 

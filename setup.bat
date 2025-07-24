@@ -76,9 +76,9 @@ if %errorlevel% neq 0 (
 cd ..
 
 echo Copying React build to public directory...
-if not exist public\react mkdir public\react
+if not exist shared\react mkdir shared\react
 if exist react-app\build (
-    xcopy react-app\build\* public\react\ /e /i /y
+    xcopy react-app\build\* shared\react\ /e /i /y
     if %errorlevel% neq 0 (
         echo Error copying React build files
         pause
@@ -96,13 +96,13 @@ echo Setup completed successfully!
 echo ========================================
 echo.
 echo Build artifacts created:
-if exist public\angular\browser (
-    echo - Angular app: public\angular\browser\
+if exist shared\angular\browser (
+    echo - Angular app: shared\angular\browser\
 ) else (
     echo - Angular app: NOT FOUND
 )
-if exist public\react (
-    echo - React app: public\react\
+if exist shared\react (
+    echo - React app: shared\react\
 ) else (
     echo - React app: NOT FOUND
 )

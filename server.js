@@ -3,20 +3,20 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create public directories if they don't exist
+// Create shared directories if they don't exist
 const fs = require('fs');
-const publicDir = path.join(__dirname, 'public');
-const angularDir = path.join(publicDir, 'angular');
-const reactDir = path.join(publicDir, 'react');
+const sharedDir = path.join(__dirname, 'shared');
+const angularDir = path.join(sharedDir, 'angular');
+const reactDir = path.join(sharedDir, 'react');
 
-[publicDir, angularDir, reactDir].forEach(dir => {
+[sharedDir, angularDir, reactDir].forEach(dir => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 });
 
-// Serve shared service file from root public directory
-app.use(express.static(publicDir));
+// Serve shared service file from root shared directory
+app.use(express.static(sharedDir));
 
 // Serve static files for Angular app (from browser subdirectory)
 app.use('/angular', express.static(path.join(angularDir, 'browser')));
