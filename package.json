@@ -8,7 +8,7 @@
     "dev:win": "concurrently \"npm run dev:angular:win\" \"npm run dev:react:win\" \"npm run dev:server\"",
     "dev:server": "nodemon server.js",
     "dev:angular": "echo 'AngularJS app - run npm run build && npm start' && npm run build:angular",
-    "dev:angular:win": "echo 'AngularJS app - run npm run build && npm start' && npm run build:angular:win",
+    "dev:angular:win": "echo 'AngularJS app - no build needed for development'",
     "dev:react": "cd react-app && npm start",
     "dev:react:win": "cd react-app && npm run start:win",
     "build": "npm run build:angular && npm run build:react",
