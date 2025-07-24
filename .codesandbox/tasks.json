@@ -1,0 +1,122 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "npm install",
+      "name": "Installing Dependencies"
+    },
+    {
+      "command": "npm run setup:angular",
+      "name": "n"
+    },
+    {
+      "command": "npm run setup:react",
+      "name": "npm run setup:react"
+    },
+    {
+      "command": "npm run build",
+      "name": "n"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "dev": {
+      "name": "dev",
+      "command": "npm run dev",
+      "runAtStart": true
+    },
+    "dev:win": {
+      "name": "dev:win",
+      "command": "npm run dev:win"
+    },
+    "dev:server": {
+      "name": "dev:server",
+      "command": "npm run dev:server"
+    },
+    "dev:angular": {
+      "name": "dev:angular",
+      "command": "npm run dev:angular"
+    },
+    "dev:angular:win": {
+      "name": "dev:angular:win",
+      "command": "npm run dev:angular:win"
+    },
+    "dev:react": {
+      "name": "dev:react",
+      "command": "npm run dev:react"
+    },
+    "dev:react:win": {
+      "name": "dev:react:win",
+      "command": "npm run dev:react:win"
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build"
+    },
+    "build:angular": {
+      "name": "build:angular",
+      "command": "npm run build:angular"
+    },
+    "build:angular:win": {
+      "name": "build:angular:win",
+      "command": "npm run build:angular:win"
+    },
+    "build:react": {
+      "name": "build:react",
+      "command": "npm run build:react"
+    },
+    "build:react:win": {
+      "name": "build:react:win",
+      "command": "npm run build:react:win"
+    },
+    "build:win": {
+      "name": "build:win",
+      "command": "npm run build:win"
+    },
+    "start": {
+      "name": "start",
+      "command": "npm run start"
+    },
+    "setup": {
+      "name": "setup",
+      "command": "npm run setup"
+    },
+    "setup:win": {
+      "name": "setup:win",
+      "command": "npm run setup:win"
+    },
+    "setup:angular": {
+      "name": "setup:angular",
+      "command": "npm run setup:angular"
+    },
+    "setup:angular:win": {
+      "name": "setup:angular:win",
+      "command": "npm run setup:angular:win"
+    },
+    "setup:react": {
+      "name": "setup:react",
+      "command": "npm run setup:react"
+    },
+    "setup:react:win": {
+      "name": "setup:react:win",
+      "command": "npm run setup:react:win"
+    },
+    "clean": {
+      "name": "clean",
+      "command": "npm run clean"
+    },
+    "clean:win": {
+      "name": "clean:win",
+      "command": "npm run clean:win"
+    },
+    "clean:all": {
+      "name": "clean:all",
+      "command": "npm run clean:all"
+    },
+    "clean:all:win": {
+      "name": "clean:all:win",
+      "command": "npm run clean:all:win"
+    }
+  }
+}
