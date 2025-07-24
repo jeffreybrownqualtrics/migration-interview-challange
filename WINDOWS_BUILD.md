@@ -8,9 +8,45 @@ This guide explains how to build the Angular to React Interview project on Windo
 2. **npm**: Usually comes with Node.js
 3. **Git**: Install Git from [git-scm.com](https://git-scm.com/)
 
-## Quick Start
+## Quick Start Options
 
-### Complete Setup (Recommended for new installations)
+### Option 1: Quick Build and Run (Easiest)
+
+For the fastest way to get started with live updating:
+
+```cmd
+quickstart.bat
+```
+
+Or using PowerShell:
+```powershell
+.\quickstart.ps1
+```
+
+This will:
+- Build the project
+- Start development servers with live updating
+- Enable hot reload for React changes
+
+### Option 2: Development Mode (Recommended for development)
+
+For development with automatic build checking:
+
+```cmd
+dev.bat
+```
+
+Or using PowerShell:
+```powershell
+.\dev.ps1
+```
+
+This will:
+- Check if project is built, build if needed
+- Start development servers with live updating
+- Provide detailed feedback about live updating features
+
+### Option 3: Complete Setup (For new installations)
 
 For a complete setup that installs dependencies, builds the project, and starts development servers:
 
@@ -29,9 +65,9 @@ This will:
 - Build both Angular and React apps
 - Start development servers automatically
 
-### Build Only (if dependencies are already installed)
+### Option 4: Build Only (if dependencies are already installed)
 
-#### Option 1: Using the improved batch file
+#### Using the improved batch file
 
 ```cmd
 build.bat
@@ -44,24 +80,27 @@ This will:
 - Copy build artifacts to the correct locations
 - Provide detailed feedback and error handling
 
-#### Option 2: Using npm scripts
+#### Using npm scripts
 
 ```cmd
 npm run build:win
 ```
 
-#### Option 3: Using PowerShell
+## Live Updating Features
 
-```powershell
-.\build.ps1
-```
+The development scripts provide live updating for:
 
-**Note**: You may need to set the execution policy first:
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
+- **React App**: Changes in `react-app/src` will automatically reload in the browser
+- **Express Server**: Changes to `server.js` will automatically restart the server
+- **Angular App**: Changes require a manual rebuild (run `npm run build:angular:win`)
 
-## Setup vs Build
+### Development URLs
+
+When running in development mode:
+- **Main Application**: http://localhost:3000
+- **React Development Server**: http://localhost:3001 (with hot reload)
+
+## Setup vs Build vs Development
 
 - **Use `setup.bat` or `setup.ps1`** when:
   - Setting up the project for the first time
@@ -72,6 +111,15 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
   - Dependencies are already installed
   - Only need to rebuild the project
   - Want to check build status without starting servers
+
+- **Use `dev.bat` or `dev.ps1`** when:
+  - Want to develop with live updating
+  - Need automatic build checking
+  - Want detailed feedback about development features
+
+- **Use `quickstart.bat` or `quickstart.ps1`** when:
+  - Want the fastest way to get started
+  - Need live updating without extra setup
 
 ## Troubleshooting
 
@@ -105,6 +153,12 @@ This usually happens when:
 1. **React dependencies not installed**: The build script now automatically installs them
 2. **Build process fails**: Check the console output for specific error messages
 3. **Path issues**: Make sure you're running from the project root directory
+
+### Live updating not working
+
+- Make sure you're using `dev.bat`, `quickstart.bat`, or `npm run dev`
+- Check that both servers are running (Express on 3000, React on 3001)
+- Verify you're editing files in the correct directories (`react-app/src` for React)
 
 ### "npm is not recognized"
 
