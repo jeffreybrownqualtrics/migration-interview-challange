@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 interface NotesAppProps {}
 
+// Shared Service
+console.log('notes', window.sharedNotesService.getNotes());
+
 export const NotesApp: React.FC<NotesAppProps> = () => {
   const [newNoteText, setNewNoteText] = useState('');
 
