@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { SharedNotesService } from './SharedServiceTypes';
 
 interface NotesAppProps {}
 
 // Shared Service
-console.log('notes', window.sharedNotesService.getNotes());
+const sharedNotesService: SharedNotesService = window.sharedNotesService;
+console.log('notes', sharedNotesService.getNotes());
 
 export const NotesApp: React.FC<NotesAppProps> = () => {
   const [newNoteText, setNewNoteText] = useState('');
